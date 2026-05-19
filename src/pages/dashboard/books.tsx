@@ -6,10 +6,10 @@ import BookCard from "../../components/BookCard"
 
 const books = () => {
   return (
-    <div className="bg-slate-200 w-full h-full">
+    <div className="max-sm:relative bg-slate-200 w-full h-full">
         <div className="flex flex-row min-h-screen gap-6">
             <Sidebar/>
-            <div className="flex flex-col w-3/4 gap-6">
+            <div className="max-sm:absolute flex flex-col w-3/4 gap-6">
               <Header/>
               <SearchBar/>
               <BookCard/>

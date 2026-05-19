@@ -24,4 +24,5 @@ export interface GutendexBook {
 
 export type BookWithStock = Book & {
   stock: number
+  isAvailable: boolean
 }

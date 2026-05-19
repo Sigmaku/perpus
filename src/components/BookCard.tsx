@@ -18,7 +18,8 @@ export default function BookCard() {
         const booksWithStock: BookWithStock[] =
           data.map((book) => ({
             ...book,
-            stock: getStock(1,20)
+            stock: getStock(1,20),
+            isAvailable: Math.random() > 0.5
         }))
         setBooks(booksWithStock)
       } catch (error) {
@@ -32,7 +33,7 @@ export default function BookCard() {
 
   if (loading) {
     return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 mr-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mr-auto">
         {[...Array(8)].map((_, i) => (
           <div key={i} className="bg-white w-55 rounded-lg shadow-lg overflow-hidden animate-pulse">
             <div className="h-64 bg-gray-300"></div>
@@ -61,7 +62,7 @@ export default function BookCard() {
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 mr-auto">
+    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mr-auto">
       {books.map((book) => (
         <div key={book.id} className="bg-white flex flex-col rounded-lg w-55 h-100 p-5 gap-4 shadow-md overflow-hidden hover:scale-105 transition-transform">
           {/* Gambar */}
@@ -78,14 +79,24 @@ export default function BookCard() {
           )}
           
           {/* Judul & Penulis */}
-          <div className="flex flex-col gap-1 h-30">
-            <div className="h-11 font-bold text-[16px] text-gray-800 mb-2 line-clamp-2">
+          <div className="flex flex-col gap-1 h-35">
+            <div className="h-12 font-bold text-[16px] text-gray-800 mb-2 line-clamp-2">
               {book.title}
             </div>
             <div className="h-11 text-sm text-gray-600">
               {book.authors.length > 0 ? book.authors.join(", ") : "Tidak diketahui"}
             </div>
-            <div className=""></div>
+            <div className="">
+              {book.isAvailable ? (
+                <span className="px-2.5 py-1 text-xs font-semibold text-emerald-700 bg-emerald-50 rounded-lg">
+                  Available
+                </span>
+              ) : (
+                <span className="px-2.5 py-1 text-xs font-semibold text-rose-700 bg-rose-50 rounded-lg">
+                  Borrowed
+                </span>
+              )}
+            </div>
           </div>
 
           <div className="border border-gray-300"></div>

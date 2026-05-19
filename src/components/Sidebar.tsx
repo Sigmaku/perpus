@@ -10,7 +10,7 @@ const Sidebar = () => {
     const isDisabled = true;
 
     return (
-        <div className="flex flex-col w-60 bg-white border-r border-[#E5E7EB] gap-2 px-6 py-8">
+        <div className="max-sm:invisible flex flex-col w-60 lg:w-60 md:w-60 bg-white border-r border-[#E5E7EB] gap-2 px-6 py-8">
             <div className="flex flex-row justify-center gap-3 mb-12">
                 <div><RiBookOpenFill size={24} className="text-blue-400"/></div>
                 <div className=" font-bold">Perpustakaan</div>
