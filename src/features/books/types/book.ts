@@ -1,4 +1,3 @@
-// features/books/types/book.ts
 export interface Book {
   id: number
   title: string
@@ -21,4 +20,8 @@ export interface GutendexBook {
     'image/jpeg'?: string
     'image/png'?: string
   }
+}
+
+export type BookWithStock = Book & {
+  stock: number
 }
