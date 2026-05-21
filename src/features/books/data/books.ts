@@ -11,7 +11,7 @@ export const fetchBooksFromAPI = async (
       console.log("Mulai Request...")
       const response =
         await api.get<GutendexResponse>(
-      `/books?page=${page}`
+      `/books/?page=${page}`
       )
       const books:Book[]=
         response.data.results.map(
