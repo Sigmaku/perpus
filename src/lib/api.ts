@@ -2,10 +2,10 @@ import axios from "axios";
 
 const api = axios.create({
   baseURL: "https://gutendex.com",
-  timeout: 10000,
-  headers: {
-    "Content-Type": "application/json",
-  },
-});
+  timeout: 0,
+  headers:{
+      "Content-Type":"application/json"
+  }
+})
 
 export default api;
