@@ -1,5 +1,7 @@
-import { Navigate } from 'react-router-dom'
+import DefaultLayout from "../features/layout/DefaultLayout.tsx";
 
 export default function Home() {
-  return <Navigate to="/dashboard/books" replace />
+  return <DefaultLayout currentMenu="dashboard">
+      <div>Welcome to Dashboard</div>
+  </DefaultLayout>
 }
