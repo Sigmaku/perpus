@@ -62,19 +62,14 @@ const BookList = () => {
 
   return (
     <div className="flex flex-col gap-6 w-full">
-      {/* 1. Manggil BookHeader */}
       <BookHeader />
-
-      {/* 2. Langsung pasang SearchBar global & oper state pengontrolnya */}
       <SearchBar
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
         selectedCategory={category}
         onCategoryChange={setCategory}
       />
-      
-      {/* 3. Map array data buku hasil filter ke komponen BookCard */}
-      <div className="grid grid-cols-5 mr-auto justify-center gap-6">
+      <div className="grid grid-cols-4 mr-auto justify-center gap-6">
         {filteredBooks.map((bookItem) => (
           <BookCard 
             key={bookItem.id}

@@ -1,7 +1,10 @@
+import DashboardPage from "../features/dashboard/DashboardPage/index.tsx";
 import DefaultLayout from "../features/layout/DefaultLayout.tsx";
 
 export default function Home() {
-  return <DefaultLayout currentMenu="dashboard">
-      <div>Welcome to Dashboard</div>
-  </DefaultLayout>
+  return (
+    <DefaultLayout currentMenu="dashboard">
+      <DashboardPage/>
+    </DefaultLayout>
+  )
 }
